@@ -62,6 +62,7 @@ namespace DapperCrud.Repository
             using var connection = context.CreateConnection();
             await connection.ExecuteAsync(sql, model);
             return model;
+
         }
         public async Task<ProductModel> Update(ProductModel model)
         {

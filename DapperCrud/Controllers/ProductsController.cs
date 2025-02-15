@@ -102,12 +102,12 @@ namespace DapperCrud.Controllers
         }
 
         [HttpPost, ActionName("Delete")]
-        [ValidateAntiForgeryToken]
+        //[ValidateAntiForgeryToken]
         public async Task<IActionResult> ConfirmDelete(Guid id)
         {
             var product = await productRepository.Find(id);
             await productRepository.Remove(product);
-            return RedirectToAction(nameof(Index));
+            return Ok();
         }
     }
 }
